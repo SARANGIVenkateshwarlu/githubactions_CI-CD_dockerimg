@@ -15,9 +15,9 @@ COPY . /app
 #COPY requirements.txt .
 
 # Upgrade pip and install dependencies
-RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt \
-    pip install Flask
+RUN pip install --upgrade pip 
+RUN pip install --no-cache-dir -r requirements.txt 
+RUN pip install Flask
 
 # Copy the application code
 # COPY . .
