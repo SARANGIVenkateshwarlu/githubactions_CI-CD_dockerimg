@@ -8,8 +8,11 @@ FROM python:3.12-slim
 # Set the working directory inside the container
 WORKDIR /app
 
+# Copy the current directory contents into the container at /app
+COPY . /app
+
 # Copy dependency file first (better Docker cache usage)
-COPY requirements.txt .
+#COPY requirements.txt .
 
 # Upgrade pip and install dependencies
 RUN pip install --upgrade pip \
@@ -17,7 +20,7 @@ RUN pip install --upgrade pip \
     pip install Flask
 
 # Copy the application code
-COPY . .
+# COPY . .
 
 # Expose Flask default port
 EXPOSE 5000
